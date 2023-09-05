@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.nichesss",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Productivity", "Utility"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://nichesss.com/help/api"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://nichesss.com/help/api"
+			}
+		]
+	}
+}

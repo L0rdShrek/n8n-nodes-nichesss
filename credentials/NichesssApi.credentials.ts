@@ -5,13 +5,13 @@ import {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class HttpBinApi implements ICredentialType {
-	name = 'httpbinApi';
-	displayName = 'HttpBin API';
-	documentationUrl = '<your-docs-url>';
+export class NichesssApi implements ICredentialType {
+	name = 'nichesssApi';
+	displayName = 'Nichesss API';
+	documentationUrl = 'https://nichesss.com/help/api';
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Token',
+			displayName: 'API KEY',
 			name: 'token',
 			type: 'string',
 			default: '',
@@ -20,7 +20,7 @@ export class HttpBinApi implements ICredentialType {
 			displayName: 'Domain',
 			name: 'domain',
 			type: 'string',
-			default: 'https://httpbin.org',
+			default: 'https://nichesss.com/api',
 		},
 	];
 
