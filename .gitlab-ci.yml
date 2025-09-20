@@ -1,0 +1,48 @@
+image: node:18
+
+stages:
+  - test
+  - build
+  - publish
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+variables:
+  CI: "true"
+
+default:
+  before_script:
+    - npm ci
+
+optional_tests:
+  stage: test
+  script:
+    - npm run test:unit || true
+    - npm run test:business || true
+  allow_failure: true
+
+build_package:
+  stage: build
+  needs:
+    - optional_tests
+  script:
+    - npm run build
+
+publish_npm:
+  stage: publish
+  rules:
+    - if: '$CI_COMMIT_TAG'
+  before_script:
+    - npm ci
+  script:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+    - npm run build
+    - npm publish --access public
+  needs:
+    - build_package
+  dependencies: []
+  environment:
+    name: release
