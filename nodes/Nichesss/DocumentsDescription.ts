@@ -1,5 +1,12 @@
 import { INodeProperties } from 'n8n-workflow';
 
+import { appendToDocumentFields, appendToDocumentPreSend } from './DocumentsAppendDescription';
+import {
+	createDocumentUsingTemplateFields,
+	createDocumentUsingTemplatePostReceive,
+	createDocumentUsingTemplatePreSend,
+} from './DocumentsTemplateDescription';
+
 // When the resource `documents` is selected, this `operation` parameter will be shown.
 export const documentsOperations: INodeProperties[] = [
 	{
@@ -89,34 +96,16 @@ export const documentsOperations: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: 'documents/push-to-queue',
-						body: '={{$parameter.json_content}}',
+						url: '/documents/push-to-queue',
 					},
 					send: {
-						preSend: [
-							async function (this, requestOptions) {
-								if (!requestOptions.body) requestOptions.body = {};
-
-								const body = this.getNodeParameter('json_content') as string;
-
-								requestOptions.body = body;
-
-								return requestOptions;
-							}
-						]
+						preSend: [createDocumentUsingTemplatePreSend],
 					},
 					output: {
-						postReceive: [
-							async function (this, items, responseData) {
-								//console.log(items, responseData);
-								return items;
-							}
-						]
-					}
+						postReceive: [createDocumentUsingTemplatePostReceive],
+					},
 				},
 			},
-
-
 			{
 				name: 'Add to Document',
 				value: 'add-to-document',
@@ -125,12 +114,12 @@ export const documentsOperations: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '=/documents/{{$parameter.document_id}}/append',
-						body: {
-							command: '={{$parameter.command}}'
-						},
+					},
+					send: {
+						preSend: [appendToDocumentPreSend],
 					},
 				},
-		},
+			},
 
 
 
@@ -238,20 +227,8 @@ export const documentsFields: INodeProperties[] = [
 		description: "Document text",
 		placeholder: 'This will override the document and become the entire text of the document. Try it out and see what happens!',
 	},
-	{
-		displayName: 'Content',
-		name: 'json_content',
-		required: true,
-		type: 'string',
-		default: '',
-		displayOptions: {
-			show: {
-				operation: ['create-document-using-template'],
-				resource: ['documents'],
-			},
-		},
-		placeholder: '{"template_id":"nSw3cz9E3","title":"The Beauty of Jamaica","about":"The beautiful things Jamaica has to offer for tourists and locals.","TOPIC":"Swimming and other activities in Jamaica","OUTLINE_ITEM_1":"Jamaica\'s beaches","OUTLINE_ITEM_2":"Jamaica\'s nature trails","OUTLINE_ITEM_3":"Jamaica\'s waterfalls and hiking trails","webhook_url":"https://a-cool-webhook.com","language":{"ID":"deepl_PT-BR","formality":"more"}}',
-	},
+	...createDocumentUsingTemplateFields,
+	...appendToDocumentFields,
 	{
 		displayName: 'QUEUE ID',
 		name: 'queue_id',
@@ -267,23 +244,4 @@ export const documentsFields: INodeProperties[] = [
 		description: '&lt;QUEUE_ID&gt;',
 		placeholder: 'yxz',
 	},
-
-
-
-	{
-		displayName: 'Command',
-		name: 'command',
-		required: true,
-		type: 'string',
-		default: '',
-		displayOptions: {
-			show: {
-				operation: ['add-to-document'],
-				resource: ['documents'],
-			},
-		},
-		description: 'Command to execute',
-		placeholder: '[Billy\'s parents spoke with him and told him never to leave the house without permission again. | storyteller]',
-	},
-
 ];

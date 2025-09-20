@@ -1,5 +1,11 @@
 import { INodeProperties } from 'n8n-workflow';
 
+import {
+	addToContentPlanFields,
+	addToContentPlanPostReceive,
+	addToContentPlanPreSend,
+} from './ContentPlansAddDescription';
+
 // When the resource `contentPlans` is selected, this `operation` parameter will be shown.
 export const contentPlansOperations: INodeProperties[] = [
 	{
@@ -22,31 +28,15 @@ export const contentPlansOperations: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '=/content-plans/{{$parameter.content_plan_id}}/append',
-						body: '={{$parameter.json_content}}',
 					},
 					send: {
-						preSend: [
-							async function (this, requestOptions) {
-								if (!requestOptions.body) requestOptions.body = {};
-
-								const body = this.getNodeParameter('json_content') as string;
-
-								requestOptions.body = body;
-
-								return requestOptions;
-							}
-						]
+						preSend: [addToContentPlanPreSend],
 					},
 					output: {
-						postReceive: [
-							async function (this, items, responseData) {
-								//console.log(items, responseData);
-								return items;
-							}
-						]
-					}
+						postReceive: [addToContentPlanPostReceive],
+					},
 				},
-		},
+			},
 			{
 				name: 'Create Content Plan',
 				value: 'create-content-plan',
@@ -118,7 +108,7 @@ export const contentPlansOperations: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{ "/content-plans/" + $parameter["queue_id"] }}',
+						url: '={{ "/content-plans/queue/" + $parameter["queue_id"] }}',
 					},
 				},
 			},
@@ -255,21 +245,7 @@ export const contentPlansFields: INodeProperties[] = [
 		},
 		placeholder: 'travel, paris, europe',
 	},
-	{
-		displayName: 'Content',
-		name: 'json_content',
-		required: true,
-		type: 'string',
-		default: '',
-		displayOptions: {
-			show: {
-				operation: ['add-to-content-plan'],
-				resource: ['contentPlans'],
-			},
-		},
-		placeholder:
-			'{"tool_id":"ZVJReZgVn","post_title":"Whats the cheapest way to get to Brazil?","tone":"helpful and professional","webhook_url":"https://a-cool-webhook.com","language":{"ID":"deepl_PT-BR","formality":"more"}}',
-	},
+	...addToContentPlanFields,
 	{
 		displayName: 'Line 1',
 		name: 'line1',
