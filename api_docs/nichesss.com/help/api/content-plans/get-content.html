@@ -1,0 +1,499 @@
+<!DOCTYPE html><html lang="en"><head><title>Get Content Plan Content | nichesss API</title><link rel="dns-prefetch" href="https://in.hotjar.com"><link rel="dns-prefetch" href="https://www.facebook.com"><link rel="dns-prefetch" href="https://connect.facebook.net"><link rel="dns-prefetch" href="https://api.segment.io"><meta name="google-adsense-account" content="ca-pub-9319663141627437"><link rel="preconnect" href="https://d2s8jx3e44hbl0.cloudfront.net"><link rel="preconnect" href="https://d1p0dj4qzdpf9u.cloudfront.net"><link rel="dns-prefetch" href="https://ingest.encharge.io"><link rel="dns-prefetch" href="https://resources-app.encharge.io"><link rel="stylesheet" type="text/css" href="https://d1p0dj4qzdpf9u.cloudfront.net/dist/nichesss.min.css?v=worried-stranger-7841-12-16-2024"><link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'"><script type="text/javascript">var after_load = {};
+after_load.queue = [];
+after_load.ready = false;
+after_load.run   = function (func) {
+    if (after_load.ready) {
+        func();
+    } else {
+        after_load.queue.push(func);
+    }
+}
+after_load.empty_queue = function () {
+    var func = after_load.queue.shift();
+    if (func) {
+        console.log('running queued function');
+        func();
+        after_load.empty_queue();
+    } else {
+        return;
+    }
+}</script><script  data-pace-options='{ "startOnPageLoad": false , "eventLag": false, "ajax": {"trackWebSockets": false, "trackMethods": ["GET","POST"]}}' src="https://d1p0dj4qzdpf9u.cloudfront.net/dist/nichesss.min.js?v=worried-stranger-7841-12-16-2024" type='text/javascript'></script>
+<meta name="facebook-domain-verification" content="6qnqu8v5g1wqm46l5qovr7i1oxbohc" /><link rel="canonical" href="get-content.html"><meta name="csrf-token" content="M3Qi3GWt-FX4KYBeLsjSIDXlkBaj6p_i3gtU"><script src="https://browser.sentry-cdn.com/7.20.0/bundle.min.js" integrity="sha384-5RztHHe3uIQ5i3YBDYLSNj/bdBQe2175He/ODV6Ml6otz91RMXg69R9eHTOnjwaW" crossorigin="anonymous"></script><script type="text/javascript">after_load.run(function () {
+    if (window.Sentry) {
+        Sentry.init({
+                dsn: 'https://dadf108ecf954771be9eeae7737a4fdc@o318209.ingest.sentry.io/5546176',
+                tracesSampleRate: 0.2,
+            });
+    }
+});
+</script><script type="text/javascript">after_load.run(function () {
+    if (Cookies && !Cookies.get('first_ref')) {
+        Cookies.set('first_ref', document.referrer || 'direct');
+    }
+
+    if (Cookies && !Cookies.get('first_page')) {
+        Cookies.set('first_page', window.location.href);
+    }
+});
+</script><script type="text/javascript">(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2167015,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script><script type="text/javascript">// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyAD--K1qyT6xWnfUzp6irOEDdEMeDbQrw0",
+    authDomain: "nichesss.firebaseapp.com",
+    databaseURL: "https://nichesss.firebaseio.com",
+    projectId: "nichesss",
+    storageBucket: "nichesss.appspot.com",
+    messagingSenderId: "922666937345",
+    appId: "1:922666937345:web:f1f13345e0bd9b790ca400"
+};
+// Initialize Firebase
+window.firebase && firebase.initializeApp(firebaseConfig);
+//firebase.analytics();</script><script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css"  media="print" onload="this.media='all'"  /><script type="text/javascript">after_load.run(function () {
+    var csrf_token = $('meta[name="csrf-token"]').attr('content');
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR){
+
+            Pace.restart();
+
+            if (options.type.toLowerCase() === "post") {
+                // initialize `data` to empty string if it does not exist
+                options.headers = options.headers || {};
+                options.headers['X-CSRF-Token'] = encodeURIComponent(csrf_token);
+            }
+        });
+});</script><meta name="viewport" content="width=device-width"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://nichesss.com/help/api/content-plans/get-content"><meta property="og:title" content="nichesss - AI Powered Content + Biz Ideas in less than 60 seconds"><meta property="og:description" content="Want to generate content or get business ideas? Create blog posts, social media content, generate business ideas and more with nichesss."><meta name="description" content="Want to generate content or get business ideas? Create blog posts, social media content, generate business ideas and more with nichesss."><!-- Global site tag (gtag.js) - Google Analytics -->
+<link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" media="print" onload="this.media='all'"  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Overpass+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'"  rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=G-9MZT4ER84B"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EB8333B55K', {
+    cookie_flags: 'max-age=7200;secure;samesite=none'
+});
+gtag('config', 'AW-1026925304');
+</script><script type="text/javascript">!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '585247982286825');
+fbq('track', 'PageView');
+</script><noscript><img height="1" width="1" style="display:none" alt="Facebook Pixel" src="https://www.facebook.com/tr?id=585247982286825&amp;ev=PageView&amp;noscript=1"></noscript><script type="text/javascript">after_load.run(function () {
+    (function () {
+
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('aff') && !Cookies.get('aff_code')) {
+            var aff_code = urlParams.get('aff');
+            Cookies.set('aff_code', aff_code);
+        }
+    })();
+});
+
+window.firebase && firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+        var postIdTokenToSessionLogin = function (idToken, csrfToken) {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: '/sessionLogin',
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': 'M3Qi3GWt-FX4KYBeLsjSIDXlkBaj6p_i3gtU'
+                    },
+                    data: {
+                        idToken: idToken
+                    },
+                    success: function () {
+                        resolve();
+                    }
+                })
+            });
+        }
+
+        user.getIdToken().then(function (idToken) {
+                // Session login endpoint is queried and the session cookie is set.
+                // CSRF protection should be taken into account.
+                // ...
+                console.log('getting token');
+                return postIdTokenToSessionLogin(idToken);
+        })
+        .then(function () {
+            return firebase.auth().signOut();
+        }).then(function() {
+            var urlParams = new URLSearchParams(window.location.search);
+
+            if (location.href.match(/nichesss.com.*\/embed\//gi)) {
+                return;
+            }
+
+            if (urlParams.get('next_url')) {
+                var next_url_decoded = decodeURIComponent(urlParams.get('next_url'));
+                if (next_url_decoded && next_url_decoded.match(/^\//gi)) {
+                    window.location.assign(next_url_decoded);
+                } else {
+                    window.location.assign('/home');
+                }
+            } else {
+                window.location.assign('/home');
+            }
+        });
+    } else {
+        // User is signed out.
+        // ...
+    }
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/bash.min.js" integrity="sha512-1vB4p6m7byDdDO/WBzzkpAEjurMSxof5+HLbSgwRmK9f9/ubLqx8ycBvUgkTMT3fH0DvXPkDWlwOp5aXIcAMKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/json.min.js" integrity="sha512-KcLAKG8ZX/8SDgs3ZYRvHh2CUAtAfUNGd4ZW1/0v37PEnZxJ4TAViOIf1euDuP2s06prYumSr+VjXRuxp9EYzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/javascript.min.js" integrity="sha512-V3q3W5043LERycIee7tLy1LAfzxblUrmI5J8p3uZF2FQ3QlMp9QddQoy4OgcIzVs4aCMEj9iwGL5UmjqHF/uBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/php.min.js" integrity="sha512-uGyl/usiWvQEfVKXG1g0FTSKs7kyuan4w5c2SPWluNEW3anQqdfWdkPqVrjP91v/G+NaRIOXyh5RTkNngP4N8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/ruby.min.js" integrity="sha512-d4cpRyA2sheOZD1pGpJsIFYSks3CLjJRJBk/e0AXC+07NSxyzjlxs50jxLYvJVqXMWNZytpAU0biUGqNysMp8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/python.min.js" integrity="sha512-U5B5W+dwLVKgk2d4TWuG7p9MFhK8wQtIXmBJSUNRpj2WFMBvYN7CrM+/3jUL80qyVrmdo/bUSq1Na84R67toeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/agate.min.css" integrity="sha512-wI7oXtzNHj/bqfLA3P6x3XYbcwzsnIKaPLfjjX8ZAXhc65+kSI6sh8gLOOByOKImokAjHUQR0xAJQ/xZTzwuOA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head><body class="nichesss--body" ng-app="nichesss"><script type="text/javascript">after_load.run(function () {
+        hotkeys.filter = function(event){
+            return true;
+        };
+
+    $(function () {
+        if ($('.a--smiley').length) {
+            $(window).on('load', function () {
+                gsap.timeline()
+                .to('.a--smiley', {rotate: 360});
+            });
+        }
+    })
+});
+</script><header class="header--smaller"><div class="container-fluid justify-content-between"><div class="row"><div class="col align-items-center d-flex justify-content-start text-center" style="max-width: 50px;"><div class="text-left"><a class="a--logo d-inline-block a--smiley" href="https://nichesss.com/" style="color: #fff;"><img class="money-emoji-light" src="https://d1p0dj4qzdpf9u.cloudfront.net/images/money-emoji.webp?V=3" alt="nichesss logo" width="42" height="40"><img class="money-emoji-dark d-none" src="https://d1p0dj4qzdpf9u.cloudfront.net/images/money-emoji-no-border.webp?V=3" alt="nichesss logo" width="42" height="40"></a></div></div><div class="col align-items-center d-flex page-name-search-ctn" style="position: relative; "><span class="font--Avenir header--page-name">api</span></div><div class="header--login-btn pr-3"><a class="btn btn-primary btn-primary--dark m-0" href="https://nichesss.com/login" style="font-size:0.65rem;">Login</a></div><div class="pr-3 d-flex align-items-center font--Avenir"><div class="header--logged-out-menu dropdown"><div class="dropdown-toggle" style="cursor:pointer;" data-toggle="dropdown"><i class="fa fa-bars"></i></div><div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="https://nichesss.com/login">Login</a><a class="dropdown-item" href="https://nichesss.com/signup">Sign-Up</a><a class="dropdown-item" href="https://nichesss.com/explore/quiz">Business Ideas</a><a class="dropdown-item" href="https://nichesss.com/help">Help</a><a class="dropdown-item" href="https://nichesss.com/pricing">Pricing</a></div></div></div></div></div></header><style type="text/css">@media (max-width: 500px) {
+    .header--page-name,
+    .header--login-btn {
+        display: none;
+    }
+}
+
+.dim--active:active {
+    opacity: 0.25;
+    top: 2px;
+}
+
+#notif-count {
+    position: absolute;
+    background: #e42626;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 3px;
+    right: -10px;
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+.notif--not-viewed {
+    background: #fffcba;
+}
+
+.hide--after::after {
+    display: none !important;
+}
+
+.has-animation header,
+.has-animation  footer {
+    opacity: 0;
+    position: relative;
+}
+
+.has-animation  header {
+    top: -50px;
+}
+
+.has-animation footer {
+    bottom: -50px;
+}
+</style><style type="text/css">/*header {
+    background: #70cef3;
+}
+
+.logged-in header {
+    border-bottom: 2px solid #fff;
+}
+
+input[type=text].input--header-search {
+    border-color: #70cef3;
+}*/
+
+/*header a img {
+    width: 60%;
+    min-width: 200px;
+    max-width: 324px;
+}*/
+</style><script type="text/handlebars" id="notif-tmpl"><div><small class="dim">LATEST NOTIFICATIONS</small></div><div class="notif--list" style="max-height: 300px; overflow-y: auto;">{{#each notifications as |notif|}}<div class="text-left m-3"><div>{{notif.text}} <a class="a--underline" style="font-size: 0.7rem;" href="https://nichesss.com/help/api/content-plans/{{notif.link}}">View</a></div><div><time datetime="{{notif.js_time}}" class="timeago dim" style='font-size: 0.6rem;'></time></div></div>{{/each}}</div></script><style type="text/css">header,
+.module--1  {
+    background: #cce7ff;
+    border: none !important;
+}
+
+header .container-fluid {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+body {
+    padding-left: 300px;
+}
+
+.module--1 {
+    position: relative;
+}
+
+table .instruct  {
+    text-align: left;
+    margin-right: 15px;
+}
+
+.why-use-html a {
+    text-decoration: underline !important;
+}
+
+.dynamic-examples .an-example {
+    max-width: 600px;
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.dynamic-examples {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/*table img {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
+}*/
+
+table .num {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    border-radius: 30px;
+    background: #333;
+    font-weight: 900;
+    color: #fff;
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.related--tool-pill {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.command-list-side {
+    color: #fff;
+    position: fixed;
+    background: #333;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    overflow: auto;
+}
+
+.module--2 p {
+    color: #888;
+}
+
+.label.label--request-type {
+    margin-right: 10px;
+    font-size: 13px;
+    display: inline-block;
+    user-select: none;
+    font-weight:900;
+}
+
+.label.label--request-type.get {
+    color: green;
+}
+
+.label.label--request-type.del {
+    color: red;
+}
+
+.label.label--request-type.put {
+    color: red;
+}
+
+.label.label--request-type.post {
+    color: #333;
+}
+
+h4 {
+    font-weight: 900;
+}
+
+.endpoint-ctn {
+    background: #efefef;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    body {
+        padding-left: 0;
+    }
+
+    .command-list-side {
+        position: static;
+        width: 100%;
+    }
+}
+</style><div class="module--1 font--Avenir d-flex align-items-center p-3 first-block font--Avenir"><div class="container-fluid max-1000"><div class="row"><div class="col"><h1 class="font--900">Get Content Plan Content</h1><p style="color:#777">Fetches all the content in a content plan</p></div></div></div></div><div class="module--2 font--Avenir"><div class="container-fluid max-1000"><div class="row"><div class="col"><div class="pt-5 pb-5 text-left"><h4>Endpoint</h4><div class="endpoint-ctn d-inline-block" style="border: 1px solid #ccc; border-radius: 3px; padding: 15px;"><span class="label label--request-type get">GET</span>https://nichesss.com/api/content-plans/&lt;CONTENT_PLAN_ID&gt;</div></div></div></div><div class="row"><div class="col"><div class="pt-5 pb-5 text-left"><h4>Authorization 🔒</h4><p>Pass your <a class="a--underline" target="_blank" href="https://nichesss.com/home/api">API Key</a> as a Bearer Token.</p></div></div></div><div class="row"><div class="col"><div class="pt-5 pb-5 text-left"><h4>Request Query Parameters</h4><p>This endpoint has no request query parameters.</p></div></div></div><div class="row"><div class="col"><div class="pt-5 pb-5 text-left"><h4>Request Body Parameters</h4><p>This endpoint has no request body paramters.</p></div></div></div><div class="row"><div class="col"><div class="pt-5 pb-5 text-left"><h4>Example API calls</h4><p>Command Line (curl)</p><pre><code class="language-bash">curl -H "Authorization: Bearer &lt;YOUR_API_KEY&gt;" -H "Accept: application/json" "https://nichesss.com/api/content-plans/&lt;CONTENT_PLAN_ID&gt;"
+</code></pre><p>JavaScript</p><pre><code class="language-javascript">fetch('https://nichesss.com/api/content-plans/&lt;CONTENT_PLAN_ID&gt;', {
+    method: 'GET',
+    headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer &lt;YOUR_API_KEY&gt;', // notice the Bearer before your token
+    }
+})
+.then((response) => response.json())
+.then((data) => console.log(data));
+</code></pre><p>Python</p><pre><code class="language-python">import requests
+
+url = 'https://nichesss.com/api/content-plans/&lt;CONTENT_PLAN_ID&gt;'
+headers = {
+    'Content-type': 'application/json',
+    'Authorization': 'Bearer &lt;YOUR_API_KEY&gt;',
+}
+
+response = requests.get(url, headers=headers)
+data = response.json()
+print(data)
+</code></pre><p>PHP</p><pre><code class="language-php">$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, 'https://nichesss.com/api/content-plans/&lt;CONTENT_PLAN_ID&gt;');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+$headers = array();
+$headers[] = 'Content-Type: application/json';
+$headers[] = 'Authorization: Bearer &lt;YOUR_API_KEY&gt;';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$result = curl_exec($ch);
+if (curl_errno($ch)) {
+    echo 'Error:' . curl_error($ch);
+}
+curl_close ($ch);
+
+$data = json_decode($result, true);
+
+print_r($data);
+</code></pre><p>Ruby</p><pre><code class="language-ruby">require 'net/http'
+require 'json'
+
+uri = URI('https://nichesss.com/api/content-plans/&lt;CONTENT_PLAN_ID&gt;')
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+request = Net::HTTP::Get.new(uri.request_uri)
+request['Content-type'] = 'application/json'
+request['Authorization'] = 'Bearer &lt;YOUR_API_KEY&gt;'
+
+response = http.request(request)
+
+puts JSON.parse(response.body)</code></pre></div></div></div><div class="row"><div class="col"><div class="pt-5 pb-5 text-left"><h4>Sample Response</h4><p>All responses from the API are JSON</p><pre><code class="language-json">{
+    "content": [
+        {
+            "id": 439,
+            "parent_id": "q4xttQRfZ",
+            "type": "NqduLgPsx",
+            "line1": "Started in 1999, Marketing Plan USA is a digital marketing agency that helps small businesse s grow through unique, high-impact marketing.",
+            "line2": "",
+            "created": 1622470695,
+            "updated": 1608855291,
+            "params": {
+                "biz_name": "Marketing Plan USA",
+                "biz_desc": "We provide digital marketing for small businesses all over the United States.",
+                "vertical": "services",
+                "biz_type": "services"
+            }
+        ... more content ...
+    ],
+    "success": true
+}</code></pre></div></div></div></div></div><div class="command-list-side font--Avenir"><div class="pt-3 pr-3 pl-3 pb-3"><span class="dim" style="font-size: 11px; text-transform: uppercase;">all endpoints (20)</span><style type="text/css">.api-menu a,
+.command-list-side ul li a {
+    color: #eee;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.command-list-side ul li span.label {
+    font-size: 11px;
+    display: inline-block;
+    width: 32px;
+    text-align: left;
+}
+
+.command-list-side ul li span.label.get {
+    color: lightgreen;
+}
+
+.command-list-side ul li span.label.post {
+    color: yellow;
+}
+
+.command-list-side ul li span.label.del {
+    color: red;
+}
+
+.command-list-side ul {
+    padding-left: 20px;
+}
+</style><div class="mt-2 api-menu"><strong>API</strong><ul><li><a href="../../api.html">API Documentation</a></li><li><a class="a--underline" href="https://nichesss.com/home/api">API Dashboard</a></li></ul><strong>Content Plans</strong><ul><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../content-plans.html">List all Content Plans</a></li><li><span class="label mr-1 get">GET</span><a class="a--underline" href="get-content.html">Get Content in Plan</a></li><li><span class="label mr-1 post">POST</span><a class="a--underline" href="create.html">Create Content Plan</a></li><li><span class="label mr-1 post">POST</span><a class="a--underline" href="append.html">Add to Content Plan</a><span class="label ml-1">*</span></li><li><span class="label mr-1 put">PUT</span><a class="a--underline" href="update.html">Edit Content in Plan</a></li><li><span class="label mr-1 del">DEL</span><a class="a--underline" href="delete.html">Delete Content Plan</a></li><li><span class="label mr-1 del">DEL</span><a class="a--underline" href="delete-content.html">Delete Content in Plan</a></li><li><span class="label mr-1 get">GET</span><a class="a--underline" href="get-queued-item.html">Get Queued Item</a></li></ul></div><div><strong>Documents</strong><ul><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../documents.html">List all Documents</a></li><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../documents/templates.html">List all Templates</a></li><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../documents/view.html">View One Document</a></li><li><span class="label mr-1 post">POST</span><a class="a--underline" href="../documents/create.html">Create Blank Document</a></li><li><span class="label mr-1 put">PUT</span><a class="a--underline" href="../documents/update.html">Edit Document</a></li><li><span class="label mr-1 post">POST</span><a class="a--underline" href="../documents/add-to-queue.html">Create Using Template</a><span class="label ml-1">*</span></li><li><span class="label mr-1 post">POST</span><a class="a--underline" href="../documents/append.html">Add to Document</a><span class="label ml-1">*</span></li><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../documents/get-queued-item.html">Get Queued Addition</a></li><li><span class="label mr-1 del">DEL</span><a class="a--underline" href="../documents/delete.html">Delete Document</a></li></ul></div><div><strong>Generations</strong><ul><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../generations.html">Number of Generations Left</a></li></ul></div><div><strong>Languages</strong><ul><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../languages.html">List all Languages</a></li></ul></div><div><strong>Tools</strong><ul><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../tools.html">List all Tools</a></li><li><span class="label mr-1 get">GET</span><a class="a--underline" href="../tools/get-one.html">Get One Tool</a></li></ul></div></div></div><script type="text/javascript">$(function () {
+    hljs.highlightAll();
+})
+</script><div><div id="chatbaby_MWjD2KWzS"></div>
+<script type="text/javascript">
+    (function (c,h,a,t,b) {
+         if (c.cq) { return; }
+         c.chatbaby = c.chatbaby || {}; c.cqq = []; c.cq = function (fn) { c.chatbaby && c.chatbaby.Widget ? fn.call() : c.cqq.push(fn) }
+         t = h.getElementsByTagName('head')[0];
+         b = h.createElement('script');
+         b.src=a+'?v=' + (new Date()).getTime();
+         t.appendChild(b)
+    })(window, document, 'https://widget.chatbaby.co/dist/chatbaby.embed.min.js');
+
+    cq(function () {
+         new chatbaby.Widget('#chatbaby_MWjD2KWzS', {
+             id: 'MWjD2KWzS',
+             width: 600,
+             height: 400
+         });
+    });
+</script></div><footer class="mt-3"><div class="container-fluid max-1000"><div class="row"><div class="col-md-12 text-center" style="font-family: &quot;Overpass Mono"><div class="text-center"><a href="https://nichesss.com/"><img class="black-logo mb-3" alt="nichesss logo" src="https://d1p0dj4qzdpf9u.cloudfront.net/images/footer-logo.webp" width="116" height="40"><img class="white-logo d-none mb-3" alt="white nichesss logo" src="https://d1p0dj4qzdpf9u.cloudfront.net/images/footer-logo-white.webp" width="116" height="40"></a></div><div class="text-left"></div><div class="text-center pt-2">&copy; 2025 by @<a href="https://twitter.com/malcolmtyson" target='_blank' style="font-weight: bold; color: #000;">malcolmtyson</a></div></div></div></div></footer><div class="modal fade" id="comingSoonModal"><div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLongTitle">Stay tuned</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">More cool features are coming soon.</div><div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button></div></div></div></div><script type="text/javascript">//!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','t2_arudh');rdt('track', 'PageVisit');
+
+after_load.run(function () {
+    $(function () {
+        window.rdt && rdt('track', 'PageVisit')
+    });
+});
+</script><script type="module" defer>import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+polyfillCountryFlagEmojis();
+</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'981faa1e98d7a57f',t:'MTc1ODM1MzkxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
