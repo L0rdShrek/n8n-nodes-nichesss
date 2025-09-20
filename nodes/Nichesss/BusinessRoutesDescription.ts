@@ -1,6 +1,5 @@
 import type { IDataObject, INodeProperties } from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
-import type { IExecuteFunctions } from 'n8n-core';
 
 import { createDocumentUsingTemplatePreSend } from './DocumentsTemplateDescription';
 
@@ -27,13 +26,13 @@ export const businessRoutesOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/documents/push-to-queue',
 					},
-					send: {
-						preSend: [createDocumentUsingTemplatePreSend],
+						send: {
+							preSend: [createDocumentUsingTemplatePreSend as any],
+						},
+						output: {
+							postReceive: [createDocumentFromTemplatePostReceive as any],
+						},
 					},
-					output: {
-						postReceive: [createDocumentFromTemplatePostReceive],
-					},
-				},
 			},
 		],
 		default: 'create-document-from-template',
@@ -286,8 +285,8 @@ export const businessRoutesFields: INodeProperties[] = [
 	},
 ];
 
-export const createDocumentFromTemplatePostReceive = async function (
-	this: IExecuteFunctions,
+export async function createDocumentFromTemplatePostReceive(
+	this: any,
 	items: IDataObject[],
 ) {
 	const results: IDataObject[] = [];
@@ -387,5 +386,4 @@ export const createDocumentFromTemplatePostReceive = async function (
 	}
 
 	return results;
-};
-
+}

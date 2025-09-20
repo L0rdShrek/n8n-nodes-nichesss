@@ -15,7 +15,7 @@ export const appendToDocumentPreSend = async function (this: any, requestOptions
 			try {
 				body = JSON.parse(body);
 			} catch (error) {
-				throw new NodeOperationError(this.getNode(), 'Content is not valid JSON.', { cause: error as Error });
+				throw new NodeOperationError(this.getNode(), 'Content is not valid JSON.');
 			}
 		}
 

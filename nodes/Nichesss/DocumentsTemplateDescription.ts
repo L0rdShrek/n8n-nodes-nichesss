@@ -15,7 +15,7 @@ export const createDocumentUsingTemplatePreSend = async function (this: any, req
 			try {
 				body = JSON.parse(body);
 			} catch (error) {
-				throw new NodeOperationError(this.getNode(), 'Content is not valid JSON.', { cause: error as Error });
+				throw new NodeOperationError(this.getNode(), 'Content is not valid JSON.');
 			}
 		}
 
@@ -55,11 +55,11 @@ export const createDocumentUsingTemplatePreSend = async function (this: any, req
 			try {
 				value = JSON.parse(rawValue);
 			} catch (error) {
-				throw new NodeOperationError(this.getNode(), `Field "${key}" contains invalid JSON.`, { cause: error as Error });
+				throw new NodeOperationError(this.getNode(), `Field "${key}" contains invalid JSON.`);
 			}
 		}
 
-		body[key] = value;
+		body[key] = value as IDataObject;
 	}
 
 	const webhookUrl = this.getNodeParameter('webhookUrl', itemIndex, '') as string;
