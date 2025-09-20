@@ -238,6 +238,6 @@ export const createDocumentUsingTemplateFields: INodeProperties[] = [
 			},
 		},
 		placeholder:
-			'{"template_id":"nSw3cz9E3","title":"The Beauty of Jamaica","about":"The beautiful things Jamaica has to offer for tourists and locals.","TOPIC":"Swimming and other activities in Jamaica","OUTLINE_ITEM_1":"Jamaica\'s beaches","OUTLINE_ITEM_2":"Jamaica\'s nature trails","OUTLINE_ITEM_3":"Jamaica\'s waterfalls and hiking trails","webhook_url":"https://a-cool-webhook.com","language":{"ID":"deepl_PT-BR","formality":"more"}}',
+			'{"template_id":"nSw3cz9E3","title":"The Beauty of Jamaica","about":"The beautiful things Jamaica has to offer for tourists and locals.","TOPIC":"Swimming and other activities in Jamaica","OUTLINE_ITEM_1":"Jamaica\'s beaches","OUTLINE_ITEM_2":"Jamaica\'s nature trails","OUTLINE_ITEM_3":"Jamaica\'s waterfalls and hiking trails","webhook_url":"https://a-cool-webhook.com","language":{"id":"deepl_PT-BR","formality":"more"}}',
 	},
 ];

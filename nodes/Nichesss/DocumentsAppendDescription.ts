@@ -165,6 +165,6 @@ export const appendToDocumentFields: INodeProperties[] = [
 			},
 		},
 		placeholder:
-			'{"command":"[Billy\'s parents spoke with him and told him never to leave the house without permission again. | storyteller]","before":"Billy felt really bad about running away from home.","after":"Billy finally learned his lesson.","language":{"ID":"deepl_PT-BR","formality":"more"}}',
+			'{"command":"[Billy\'s parents spoke with him and told him never to leave the house without permission again. | storyteller]","before":"Billy felt really bad about running away from home.","after":"Billy finally learned his lesson.","language":{"id":"deepl_PT-BR","formality":"more"}}',
 	},
 ];

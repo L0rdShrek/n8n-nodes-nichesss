@@ -4,6 +4,7 @@ import { documentsFields, documentsOperations } from './DocumentsDescription';
 import { toolsFields, toolsOperations } from './ToolsDescription';
 import { langaugesFields, langaugesOperations } from './LangaugesDescription';
 import { generationsFields, generationsOperations } from './GenerationsDescription';
+import { businessRoutesFields, businessRoutesOperations } from './BusinessRoutesDescription';
 
 export class Nichesss implements INodeType {
 	description: INodeTypeDescription = {
@@ -26,7 +27,7 @@ export class Nichesss implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://nichesss.com/api',
+			baseURL: '={{$credentials?.nichesssApi?.domain || "https://nichesss.com/api"}}',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -70,6 +71,10 @@ export class Nichesss implements INodeType {
 						name: 'Tool',
 						value: 'tools',
 					},
+					{
+						name: 'Business Route',
+						value: 'businessRoutes',
+					},
 				],
 				default: 'contentPlans',
 			},
@@ -87,7 +92,10 @@ export class Nichesss implements INodeType {
 			...toolsFields,
 
 			...documentsOperations,
-			...documentsFields
+			...documentsFields,
+
+			...businessRoutesOperations,
+			...businessRoutesFields,
 		],
 	};
 }

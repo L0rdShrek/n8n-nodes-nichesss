@@ -239,6 +239,6 @@ export const addToContentPlanFields: INodeProperties[] = [
 			},
 		},
 		placeholder:
-			'{"tool_id":"ZVJReZgVn","post_title":"Whats the cheapest way to get to Brazil?","tone":"helpful and professional","webhook_url":"https://a-cool-webhook.com","language":{"ID":"deepl_PT-BR","formality":"more"}}',
+			'{"tool_id":"ZVJReZgVn","post_title":"Whats the cheapest way to get to Brazil?","tone":"helpful and professional","webhook_url":"https://a-cool-webhook.com","language":{"id":"deepl_PT-BR","formality":"more"}}',
 	},
 ];
