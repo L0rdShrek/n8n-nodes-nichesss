@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
 import { contentPlansFields, contentPlansOperations } from './ContentPlansDescription';
 import { documentsFields, documentsOperations } from './DocumentsDescription';
 import { toolsFields, toolsOperations } from './ToolsDescription';
@@ -17,8 +17,8 @@ export class Nichesss implements INodeType {
 		defaults: {
 			name: 'Nichesss',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
 		credentials: [
 			{
 				name: 'nichesssApi',
